@@ -1,27 +1,44 @@
 import React from 'react';
-// import logo from './logo.svg';
-import argoLogo from './argo-logo.svg'
 import './App.css';
+import { Navbar } from './components/Navbar';
+import { Filters } from './components/Filters';
+import { Conversations } from './components/Conversations';
+import { SentimentSummary } from './components/SentimentSummary';
+
+const moods = {
+	0: 'Sad',
+	1: 'Meh',
+	2: 'Happy',
+};
+
+const topics = {
+	A: 'Branch',
+	B: 'Website',
+	C: 'App',
+	D: 'Fraud',
+	E: 'Racism',
+	F: 'Refunds',
+	G: 'Deliveries',
+};
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={argoLogo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div
+			style={{
+				backgroundColor: '#282C34',
+				width: '100%',
+				height: '100%',
+				fontFamily: 'montserrat',
+			}}
+		>
+			<Navbar />
+			<div class='flex flex-row px-20 py-10 w-screen h-screen'>
+				<Filters />
+				<Conversations />
+				<SentimentSummary />
+			</div>
+		</div>
+	);
 }
 
 export default App;
