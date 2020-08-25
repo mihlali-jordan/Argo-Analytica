@@ -32,7 +32,7 @@ function App() {
 			}}
 		>
 			<Navbar />
-			<div class='flex flex-row px-20 py-10 w-screen h-screen'>
+			<div className='flex flex-row px-20 py-10 w-screen h-screen'>
 				<Filters />
 				<Conversations />
 				<SentimentSummary />

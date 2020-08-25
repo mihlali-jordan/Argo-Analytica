@@ -1,16 +1,39 @@
 import React from 'react';
 import '../tailwind.css';
-import {FilterButton} from './FilterButton.js';
+import { FilterButton } from './FilterButton.js';
+
+const topics = {
+	A: 'Branch',
+	B: 'Website',
+	C: 'App',
+	D: 'Fraud',
+	E: 'Racism',
+	F: 'Refunds',
+	G: 'Deliveries',
+};
+
+const moods = {
+	0: 'Sad',
+	1: 'Meh',
+	2: 'Happy',
+};
+
+const arrTopics = Object.entries(topics);
+const arrMoods = Object.entries(moods)
 
 export const Filters = () => {
 	return (
-		<div className='flex flex-col w-1/3 overflow-y-scroll'>
+		<div className='flex flex-col w-1/3'>
 			<h1 className='text-white text-2xl'>Clear out the noise</h1>
 			<div className='container pr-5'>
 				<h1 className='text-argo-primary text-sm mt-5 mb-2'>Filter by topic</h1>
-				<FilterButton />
-                <h1 className="text-argo-primary text-sm mt-5 mb-2">Filter by mood</h1>
-                <FilterButton />
+				{arrTopics.map((topic, i) => (
+					<FilterButton key={i} topic={topic[1]} />
+				))}
+				<h1 className='text-argo-primary text-sm mt-5 mb-2'>Filter by mood</h1>
+				{arrMoods.map((mood, i) => (
+					<FilterButton key={i} mood={mood[1]} />
+				))}
 			</div>
 		</div>
 	);
