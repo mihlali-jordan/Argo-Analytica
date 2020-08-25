@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../tailwind.css';
 import { FilterButton } from './FilterButton.js';
 
@@ -22,6 +22,7 @@ const arrTopics = Object.entries(topics);
 const arrMoods = Object.entries(moods)
 
 export const Filters = () => {
+
 	return (
 		<div className='flex flex-col w-1/3'>
 			<h1 className='text-white text-2xl'>Clear out the noise</h1>

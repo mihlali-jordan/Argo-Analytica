@@ -5,22 +5,6 @@ import { Filters } from './components/Filters';
 import { Conversations } from './components/Conversations';
 import { SentimentSummary } from './components/SentimentSummary';
 
-const moods = {
-	0: 'Sad',
-	1: 'Meh',
-	2: 'Happy',
-};
-
-const topics = {
-	A: 'Branch',
-	B: 'Website',
-	C: 'App',
-	D: 'Fraud',
-	E: 'Racism',
-	F: 'Refunds',
-	G: 'Deliveries',
-};
-
 function App() {
 	return (
 		<div

@@ -45,7 +45,7 @@ export const Sentiment = ({ mood }) => {
 			</svg>
 			<div className='flex flex-col justify-center items-center'>
 				<div className={sentimentState.sentimentTag}>
-					<h1 className='flex m-auto justify-center'>Meh</h1>
+					<h1 className='flex m-auto justify-center'>{mood}</h1>
 				</div>
 				<h1 className={sentimentState.sentimentPercentage}>33%</h1>
 			</div>
