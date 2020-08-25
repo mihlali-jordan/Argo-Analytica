@@ -1,24 +1,25 @@
 import React from 'react';
 import '../tailwind.css';
+import Moment from 'react-moment'
 
-export const Post = () => {
+export const Post = ({postDetails}) => {
+	const dateToFormat = postDetails.date
 	return (
 		<div className='post-component p-3 border-b border-argo-grey hover:bg-argo-darkGrey cursor-pointer'>
 			<div className='flex flex-row text-white items-center mb-2'>
 				<img
 					className='rounded-full h-16 w-16 mr-3'
-					src='https://randomuser.me/api/portraits/thumb/men/27.jpg'
+					src={postDetails.authorPic}
 					alt=''
 				/>
 				<div className='flex-col'>
-					<h1 className='text-argo-primary'>Mihlali Jordan</h1>
-					<p className='text-gray-400'>15:44 PM | May 08, 2020</p>
+					<h1 className='text-argo-primary'>{postDetails.authorName}</h1>
+					<p className='text-gray-400'><Moment format="D MMM YYYY hh:mm A">{dateToFormat}</Moment></p>
 				</div>
 			</div>
 			<div className='text-gray-400 text-sm mb-3'>
 				<p>
-					Mi vivamus lobortis senectus orci aliquam etiam hac pretium enim,
-					className placerat commodo luctus ad elit justo ultrices.
+					{postDetails.text}
 				</p>
 			</div>
 			<div className='flex flex-row mb-5'>
