@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Filters } from './components/Filters';
 import { Conversations } from './components/Conversations';
 import { SentimentSummary } from './components/SentimentSummary';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 function App() {
 	return (
