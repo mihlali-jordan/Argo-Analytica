@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import './index.css'
+import './index.css';
 import { Navbar } from './components/Navbar';
 import { Filters } from './components/Filters';
 import { Conversations } from './components/Conversations';
 import { SentimentSummary } from './components/SentimentSummary';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {PostConversation} from './components/PostConversation'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
+	const url = `/id`
 	return (
 		<div
 			style={{
@@ -18,9 +20,12 @@ function App() {
 			}}
 		>
 			<Navbar />
-			<div className='flex flex-row px-20 py-10 w-screen h-screen'>
+			<div className='flex flex-row px-12 py-10 w-screen h-screen'>
 				<Filters />
-				<Conversations />
+				<Router>
+					<Route exact path='/' component={Conversations} />
+					<Route exact path={url} componet={PostConversation} />
+				</Router>
 				<SentimentSummary />
 			</div>
 		</div>
