@@ -1,9 +1,36 @@
 import React from 'react';
 import '../tailwind.css';
 import Moment from 'react-moment'
+import {Posts} from '../data/Posts'
 
 export const Post = ({postDetails}) => {
 	const dateToFormat = postDetails.date
+	const posts = Posts
+
+	// Counting which posts are responses to  an invidual post
+	let replies = 0
+	posts.forEach(post => {
+		if(post.replyToId === postDetails.id){
+			replies += 1
+		}
+	})
+
+	// Logic for rendering the correct tag on a post
+	let color = "green"
+	let sentiment = "meh"
+	if(postDetails.mood === 0) {
+		color="red"
+		sentiment="Sad"
+	} else if(postDetails.mood === 1){
+		color="yellow"
+		sentiment="Meh"
+	} else {
+		color="green"
+		sentiment="Happy"
+	}
+
+	const tagCss = `bg-${color}-200 rounded-full text-${color}-600 w-20`
+
 	return (
 		<div className='post-component p-3 border-b border-argo-grey hover:bg-argo-darkGrey cursor-pointer'>
 			<div className='flex flex-row text-white items-center mb-2'>
@@ -23,11 +50,11 @@ export const Post = ({postDetails}) => {
 				</p>
 			</div>
 			<div className='flex flex-row mb-5'>
-				<div className='bg-yellow-200 rounded-full text-yellow-600 w-20'>
-					<h1 className='flex m-auto justify-center'>Meh</h1>
+				<div className={tagCss}>
+					<h1 className='flex m-auto justify-center'>{sentiment}</h1>
 				</div>
 				<span className='flex-grow'></span>
-				<p className='text-argo-grey text-sm'>10 Replies</p>
+				<p className='text-argo-grey text-sm'>{replies} Replies</p>
 			</div>
 		</div>
 	);

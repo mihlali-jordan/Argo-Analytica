@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './index.css'
 import { Navbar } from './components/Navbar';
 import { Filters } from './components/Filters';
 import { Conversations } from './components/Conversations';
