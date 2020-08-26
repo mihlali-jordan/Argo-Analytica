@@ -28,7 +28,7 @@ export const Conversations = ({ match }) => {
 		<div className='flex flex-col w-1/2 mr-8'>
 			<h1 className='text-white text-2xl mb-5'>Latest Conversations</h1>
 			<div className='posts overflow-y-scroll'>
-				{A.map((post, index) => (
+				{posts.map((post, index) => (
 					<div key={post.id}>
 						<Link
 							to={{
