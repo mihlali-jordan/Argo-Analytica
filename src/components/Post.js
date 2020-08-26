@@ -33,7 +33,7 @@ export const Post = ({ postDetails, location }) => {
 	const tagCss = `bg-${color}-200 rounded-full text-${color}-600 w-20`;
 
 	return (
-		<div className='post-component p-3 hover:bg-argo-darkGrey cursor-pointer'>
+		<div className='post-component p-3 hover:bg-argo-darkGrey'>
 			<div className='flex flex-row text-white items-center mb-2'>
 				<img
 					className='rounded-full h-16 w-16 mr-3'
