@@ -2,15 +2,12 @@ import React from 'react';
 import '../tailwind.css';
 import Moment from 'react-moment';
 import { Posts } from '../data/Posts';
-import { Link } from 'react-router-dom';
 
 export const Post = ({ postDetails, location }) => {
 	const dateToFormat = postDetails.date;
 	const posts = Posts;
-	const postUrl = `/${postDetails.id}`;
 
 	
-
 	// Counting which posts are responses to  an invidual post
 	let replies = 0;
 	posts.forEach((post) => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import './index.css';
 import { Navbar } from './components/Navbar';
@@ -10,17 +10,9 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Redirect,
-	useHistory,
 } from 'react-router-dom';
 
 function App(props) {
-	// const history = useHistory();
-
-	// useEffect(() => {
-	// 	return history.listen((location) => {
-	// 		console.log(`You changed the page to: ${location.pathname}`);
-	// 	});
-	// }, [history]);
 
 	return (
 		<div

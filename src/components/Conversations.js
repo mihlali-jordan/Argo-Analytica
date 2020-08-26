@@ -3,7 +3,6 @@ import '../tailwind.css';
 import { Post } from './Post';
 import { Posts } from '../data/Posts';
 import { Link, Route } from 'react-router-dom';
-import {PostConversation} from './PostConversation'
 
 export const Conversations = ({ match }) => {
 	const posts = Posts;
