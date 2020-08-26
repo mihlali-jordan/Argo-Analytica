@@ -1,19 +1,34 @@
 import React from 'react';
 import '../tailwind.css';
+import {Posts} from '../data/Posts'
 
 export const Sentiment = ({ mood }) => {
-	// console.log(mood)
+	
+	// Math operations to calculate overall sentiment percentages
+	const posts = Posts
+	const sadSentimentCount = posts.filter(post => post.mood === 0).length
+    const happySentimentCount = posts.filter(post =>  post.mood === 2).length
+	const mehSentimentCount = posts.filter(post => post.mood === 1).length
+	
+	const totalPosts = sadSentimentCount + happySentimentCount + mehSentimentCount
+
+	
+	let sentimentPer = 0
 	let color = "green"
 
 	if(mood === "sad") {
 		color="red"
+		sentimentPer = Math.round((sadSentimentCount/totalPosts)*100)
 	} else if(mood === "meh"){
 		color="yellow"
+		sentimentPer = Math.round((mehSentimentCount/totalPosts)*100)
 	} else {
 		color="green"
+		sentimentPer = Math.round((happySentimentCount/totalPosts)*100)
 	}
 
-	// console.log(color)
+
+	
 	const sentimentState = {
 		emoji: `w-20 mr-2 fill-current text-${color}-600`,
 		sentimentTag: `bg-${color}-200 rounded-full text-${color}-600 w-24`,
@@ -47,7 +62,7 @@ export const Sentiment = ({ mood }) => {
 				<div className={sentimentState.sentimentTag}>
 					<h1 className='flex m-auto justify-center'>{mood}</h1>
 				</div>
-				<h1 className={sentimentState.sentimentPercentage}>33%</h1>
+				<h1 className={sentimentState.sentimentPercentage}>{`${sentimentPer}%`}</h1>
 			</div>
 		</div>
 	);
