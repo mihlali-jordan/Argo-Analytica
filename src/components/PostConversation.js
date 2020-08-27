@@ -5,7 +5,7 @@ import { Posts } from '../data/Posts';
 import { Link } from 'react-router-dom';
 import { Comment } from './Comment';
 
-export const PostConversation = ({ url, match }) => {
+export const PostConversation = () => {
 	const posts = Posts;
 	let currentUrl = window.location.pathname;
 	const isCurrentPost = posts.filter((post) => {

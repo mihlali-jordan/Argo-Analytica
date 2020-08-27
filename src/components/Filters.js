@@ -2,26 +2,27 @@ import React from 'react';
 import '../tailwind.css';
 import { FilterButton } from './FilterButton.js';
 
-const topics = {
-	A: 'Branch',
-	B: 'Website',
-	C: 'App',
-	D: 'Fraud',
-	E: 'Racism',
-	F: 'Refunds',
-	G: 'Deliveries',
-};
 
-const moods = {
-	0: 'Sad',
-	1: 'Meh',
-	2: 'Happy',
-};
-
-const arrTopics = Object.entries(topics);
-const arrMoods = Object.entries(moods)
 
 export const Filters = () => {
+	const topics = {
+		A: 'Branch',
+		B: 'Website',
+		C: 'App',
+		D: 'Fraud',
+		E: 'Racism',
+		F: 'Refunds',
+		G: 'Deliveries',
+	};
+	
+	const moods = {
+		0: 'Sad',
+		1: 'Meh',
+		2: 'Happy',
+	};
+	
+	const arrTopics = Object.entries(topics);
+	const arrMoods = Object.entries(moods)
 
 	return (
 		<div className='flex flex-col w-1/4'>

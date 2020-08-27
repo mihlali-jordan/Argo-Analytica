@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../tailwind.css';
 
-export const FilterButton = ({ topic, mood }) => {
+export const FilterButton = (props) => {
 	const [clicked, setClicked] = useState(false);
 	const handleClick = () => {
 		setClicked(!clicked);
@@ -16,7 +16,7 @@ export const FilterButton = ({ topic, mood }) => {
 			}
 			onClick={() => handleClick()}
 		>
-			{topic || mood}
+			{props.topic || props.mood}
 		</button>
 	);
 };
